@@ -3,7 +3,7 @@ from __future__ import division
 import json
 import sys
 #import codecs
-import statistics
+#import statistics
 
 from datetime import datetime, timedelta
 from dateutil.parser import parse
@@ -72,14 +72,16 @@ class MedianDegree:
                     merged = list(chain(*slider_set)) #use itertools to uncouple the tuples into a list
                     d = {x:merged.count(x) for x in merged} #dictionary with degree of each node
                     #a, b = d.keys(), d.values()
-                    degrees = sorted(d.values())
-                try:
-                    median_degree = statistics.median(degrees)
-                except statistics.StatisticsError:
-                	median_degree = median_degree
-                #fout.write(str(len_tuple) + "\n")
+                    #degrees = sorted(d.values())
+                #try:
+                #    median_degree = statistics.median(degrees)
+                #except statistics.StatisticsError:
+                #	median_degree = median_degree
+                #print(degrees)
+                median_degree = self.graphcalcs.getMedian(d.values())
+
                 fout.write("%.2f" % median_degree + "\n")
-            #print(people_tuple)
+
             #fout.write("%.2f" % (5/3) + "\n")
 
 if __name__ == '__main__':

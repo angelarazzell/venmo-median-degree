@@ -1,4 +1,4 @@
-from __future__ import division
+#from __future__ import division
 from datetime import datetime, timedelta
 
 class GraphCalcs:
@@ -7,9 +7,8 @@ class GraphCalcs:
         self.time_list = []
         self.edges_list = []
         self.nodes_list = []
-        
-    #def getKey(item):
-    #    return item[0]
+        self.numericValues = []
+
         
     def cutoff(self, time_list, delta):
         """return the minimum acceptable time for the current time window"""
@@ -25,6 +24,16 @@ class GraphCalcs:
             return (noedges / nonodes)
         except ZeroDivisionError:
             return (noedges / 1)
+    
+    def getMedian(self, numericValues):
+        theValues = sorted(numericValues)
+        if len(theValues) % 2 == 1:
+            return theValues[((len(theValues)+1)//2)-1]
+        else:
+            lower = theValues[(len(theValues)//2)-1]
+            upper = theValues[len(theValues)//2]
+            return (float(lower + upper)) / 2
+    
     """
     def truncate(f, n):
     '''Truncates/pads a float f to n decimal places without rounding'''
