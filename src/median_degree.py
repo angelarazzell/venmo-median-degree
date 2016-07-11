@@ -79,7 +79,7 @@ class MedianDegree:
                 	median_degree = median_degree
                 #fout.write(str(len_tuple) + "\n")
                 fout.write("%.2f" % median_degree + "\n")
-            print(people_tuple)
+            #print(people_tuple)
             #fout.write("%.2f" % (5/3) + "\n")
 
 if __name__ == '__main__':
