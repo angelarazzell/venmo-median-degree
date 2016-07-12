@@ -17,10 +17,6 @@ from datetime import datetime, timedelta
 from dateutil.parser import parse
 from median_degree import *
 
-#from src.graphcalcs.graphcalcs import * # universal import
-#from '/Users/will/Python/venmo_median_degree/src/graphcalcs' import * 
-#print(os.getcwd())
-
 
 class CalculationsCheck(unittest.TestCase):
     def __init__(self, *args, **kwargs):
